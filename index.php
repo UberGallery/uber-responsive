@@ -63,9 +63,8 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-            
-
-
+        <!-- End UberGallery - Distributed under the MIT license: http://www.opensource.org/licenses/mit-license.php -->
+        
         <hr/>
         
         <div class="row">
