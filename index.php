@@ -67,53 +67,48 @@
         
         <hr/>
         
-        <div class="row">
         
-            <div class="span9">
-                <?php if ($galleryArray['stats']['total_pages'] > 1): ?>
-                    
-                    <div class="pagination">
-                        <ul>
-                            <?php foreach ($galleryArray['paginator'] as $item): ?>
-                                
-                                <?php
-                                
-                                    switch ($item['class']) {
-                                            
-                                        case 'title':
-                                            $class = 'disabled';
-                                            break;
-                                            
-                                        case 'inactive':
-                                            $class = 'disabled';
-                                            break;
-                                            
-                                        case 'current':
-                                            $class = 'active';
-                                            break;
-                                            
-                                        case 'active':
-                                            $class = NULL;
-                                            break;
-                                        
-                                    }
-                                    
-                                ?>
-                                
-                                <li class="<?php echo $class; ?>">
-                                    <a href="<?php echo empty($item['href']) ? '#' : $item['href']; ?>"><?php echo $item['text']; ?></a>
-                                </li>
-                                
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endif; ?>
-            </div>
+        <?php if ($galleryArray['stats']['total_pages'] > 1): ?>
             
-            <div class="span3">
-                <p class="credit pull-right">Powered by, <a href="http://www.ubergallery.net">UberGallery</a></p>
+            <div class="pagination pagination-centered">
+                <ul>
+                    <?php foreach ($galleryArray['paginator'] as $item): ?>
+                        
+                        <?php
+                        
+                            switch ($item['class']) {
+                                    
+                                case 'title':
+                                    $class = 'disabled';
+                                    break;
+                                    
+                                case 'inactive':
+                                    $class = 'disabled';
+                                    break;
+                                    
+                                case 'current':
+                                    $class = 'active';
+                                    break;
+                                    
+                                case 'active':
+                                    $class = NULL;
+                                    break;
+                                
+                            }
+                            
+                        ?>
+                        
+                        <li class="<?php echo $class; ?>">
+                            <a href="<?php echo empty($item['href']) ? '#' : $item['href']; ?>"><?php echo $item['text']; ?></a>
+                        </li>
+                        
+                    <?php endforeach; ?>
+                </ul>
             </div>
-        </div>
+        <?php endif; ?>
+        
+        <p class="credit">Powered by, <a href="http://www.ubergallery.net">UberGallery</a></p>
+        
     </div>
     
 </body>

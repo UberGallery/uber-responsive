@@ -17,5 +17,5 @@ body {
 
 .credit {
     margin: 9px 0;
-    white-space: nowrap;
+    text-align: center;
 }
