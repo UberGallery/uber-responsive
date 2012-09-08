@@ -30,15 +30,15 @@
 
 <body>
 
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <h1 class="brand">UberGallery</h1>
+    <div class="container">
+        
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand">UberGallery</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
         
         <?php if($gallery->getSystemMessages()): ?>
             <div class="row">
