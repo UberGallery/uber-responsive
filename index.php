@@ -54,15 +54,17 @@
         <?php endif; ?>
             
         <!-- Start UberGallery v<?php echo UberGallery::VERSION; ?> - Copyright (c) <?php echo date('Y'); ?> Chris Kankiewicz (http://www.ChrisKankiewicz.com) -->
-        <ul class="gallery-wrapper thumbnails">
-            <?php foreach ($galleryArray['images'] as $image): ?>
-                <li class="">
-                    <a href="<?php echo $image['file_path']; ?>" title="<?php echo $image['file_title']; ?>" class="thumbnail" rel="colorbox">
-                        <img src="<?php echo $image['thumb_path']; ?>" alt="<?php echo $image['file_title']; ?>" />
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <?php if (!empty($galleryArray) && $galleryArray['stats']['total_images'] > 0): ?>
+            <ul class="gallery-wrapper thumbnails">
+                <?php foreach ($galleryArray['images'] as $image): ?>
+                    <li class="">
+                        <a href="<?php echo $image['file_path']; ?>" title="<?php echo $image['file_title']; ?>" class="thumbnail" rel="colorbox">
+                            <img src="<?php echo $image['thumb_path']; ?>" alt="<?php echo $image['file_title']; ?>" />
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
         <!-- End UberGallery - Distributed under the MIT license: http://www.opensource.org/licenses/mit-license.php -->
         
         <hr/>
