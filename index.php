@@ -41,16 +41,12 @@
         </div>
         
         <?php if($gallery->getSystemMessages()): ?>
-            <div class="row">
-                <ul id="systemMessages">
-                    <?php foreach($gallery->getSystemMessages() as $message): ?>
-                        <li class="alert alert-<?php echo $message['type']; ?>">
-                            <a class="close" data-dismiss="alert">×</a>
-                            <?php echo $message['text']; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
+            <?php foreach($gallery->getSystemMessages() as $message): ?>
+                <div class="alert alert-<?php echo $message['type']; ?>">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <?php echo $message['text']; ?>
+                </div>
+            <?php endforeach; ?>
         <?php endif; ?>
             
         <!-- Start UberGallery v<?php echo UberGallery::VERSION; ?> - Copyright (c) <?php echo date('Y'); ?> Chris Kankiewicz (http://www.ChrisKankiewicz.com) -->
