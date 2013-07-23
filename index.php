@@ -3,29 +3,29 @@
 
 <head>
     <title>UberGallery</title>
-    
+
     <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/favicon.png" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/bootstrap-responsive.min.css" />
     <?php echo $gallery->getColorboxStyles(1); ?>
-    
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/bootstrap.min.js"></script>
     <?php echo $gallery->getColorboxScripts(); ?>
-    
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <?php file_exists('googleAnalytics.inc') ? include('googleAnalytics.inc') : false; ?>
-    
+
 </head>
 
 <body>
 
     <div class="container">
-        
+
         <div class="navbar navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        
+
         <?php if($gallery->getSystemMessages()): ?>
             <?php foreach($gallery->getSystemMessages() as $message): ?>
                 <div class="alert alert-<?php echo $message['type']; ?>">
@@ -42,7 +42,7 @@
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
-            
+
         <!-- Start UberGallery v<?php echo UberGallery::VERSION; ?> - Copyright (c) <?php echo date('Y'); ?> Chris Kankiewicz (http://www.ChrisKankiewicz.com) -->
         <?php if (!empty($galleryArray) && $galleryArray['stats']['total_images'] > 0): ?>
             <ul class="gallery-wrapper thumbnails">
@@ -56,53 +56,53 @@
             </ul>
         <?php endif; ?>
         <!-- End UberGallery - Distributed under the MIT license: http://www.opensource.org/licenses/mit-license.php -->
-        
+
         <hr/>
-        
-        
+
+
         <?php if ($galleryArray['stats']['total_pages'] > 1): ?>
-            
+
             <div class="pagination pagination-centered">
                 <ul>
                     <?php foreach ($galleryArray['paginator'] as $item): ?>
-                        
+
                         <?php
-                        
+
                             switch ($item['class']) {
-                                    
+
                                 case 'title':
                                     $class = 'disabled';
                                     break;
-                                    
+
                                 case 'inactive':
                                     $class = 'disabled';
                                     break;
-                                    
+
                                 case 'current':
                                     $class = 'active';
                                     break;
-                                    
+
                                 case 'active':
                                     $class = NULL;
                                     break;
-                                
+
                             }
-                            
+
                         ?>
-                        
+
                         <li class="<?php echo $class; ?>">
                             <a href="<?php echo empty($item['href']) ? '#' : $item['href']; ?>"><?php echo $item['text']; ?></a>
                         </li>
-                        
+
                     <?php endforeach; ?>
                 </ul>
             </div>
         <?php endif; ?>
-        
+
         <p class="credit">Powered by, <a href="http://www.ubergallery.net">UberGallery</a></p>
-        
+
     </div>
-    
+
 </body>
 
 <!-- Page template by, Chris Kankiewicz <http://www.chriskankiewicz.com> -->
