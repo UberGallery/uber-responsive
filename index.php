@@ -15,15 +15,13 @@
     <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/bootstrap.min.js"></script>
     <?php echo $gallery->getColorboxScripts(); ?>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <?php file_exists('googleAnalytics.inc') ? include('googleAnalytics.inc') : false; ?>
-
 </head>
 
 <body>
-
     <div class="container">
 
         <div class="navbar navbar-inverse">
@@ -102,7 +100,6 @@
         <p class="credit">Powered by, <a href="http://www.ubergallery.net">UberGallery</a></p>
 
     </div>
-
 </body>
 
 <!-- Page template by, Chris Kankiewicz <http://www.chriskankiewicz.com> -->
